@@ -16,7 +16,7 @@
 % function's output with known speech onsets, etc.
 %
 % Alexis Deighton MacIntyre
-% a.macintyre.17@ucl.ac.uk
+% alexisdeighton.macintyre@mrc-cbu.cam.ac.uk
 
 function [onsets,offsets] = breathTimes(vector,Fs,varargin)
 defaultWin = 20;
