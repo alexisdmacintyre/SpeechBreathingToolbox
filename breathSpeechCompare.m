@@ -23,9 +23,11 @@
 % Optional name-value paired arguments:
 % 'EnvMethod' (1 or 2, default is 1)
 % 'MinDur' (minimum duration between onset and offset, default is 150 ms)
+% 'MinHeight' (minimum vertical distance between onset and offset, default
+% is 0.075 A.U.)
 
 % Example usage:
-% [beg,en] = breathSpeechCompare(beg,en,breathBelt,1000,speechRecording,44100,2);                
+% [beg,en] = breathSpeechCompare(beg,en,breathBelt,1000,speechRecording,44100,2,'MinHeight',0.10);                
 
 
 function [beg,en] = breathSpeechCompare(beg,en,breathBelt,breathFs,audioData,audioFs,varargin)
@@ -36,6 +38,7 @@ validParam = @(x) isnumeric(x) && isscalar(x) && (x > 0);
 validEnv = @(x) x == 1 || x == 2;
 defaultEnvelope = 1;
 defaultDuration = 150;
+defaultHeight = 0.075;
 
 addRequired(argIn,'beg');
 addRequired(argIn,'en');
@@ -45,6 +48,7 @@ addRequired(argIn,'audioData');
 addRequired(argIn,'audioFs');
 addParameter(argIn,'EnvMethod',defaultEnvelope,validEnv);
 addParameter(argIn,'MinDur',defaultDuration,validParam);
+addParameter(argIn,'MinHeight',defaultHeight,validParam);
 
 parse(argIn,beg,en,breathBelt,breathFs,audioData,audioFs,varargin{:});
 
@@ -61,6 +65,9 @@ end
 
 env = argIn.Results.EnvMethod;
 minDur = argIn.Results.MinDur;
+minHt = argIn.Results.MinHeight;
+
+breathBelt = rescale(breathBelt - mean(breathBelt),0,1);
 
 % Set up parameters
 maxBlip = 45*breathFs;
@@ -290,8 +297,9 @@ beg(isnan(beg)) = [];
 en(isnan(en)) = [];
 
 hts = breathBelt(en)-breathBelt(beg); % Remove breaths that are too small/short to be realistic
-beg(hts < 0.175) = [];
-en(hts < 0.175) = [];
+
+beg(hts < minHt) = [];
+en(hts < minHt) = [];
 
 durs = en-beg;
 beg(durs < minDur) = [];
