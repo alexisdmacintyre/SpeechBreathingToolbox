@@ -3,7 +3,7 @@ Tools for the automatic detection of speech-related inhalation events and charac
 
 **About**
 
-Use 'findBreaths()' to automatically detect speech breathing onsets and ends, then optionally corroborate the results to the acoustic speech envelope using 'breathSpeechCompare()'. Finally, you can use 'plotBreaths()' to visualise the breath onsets and ends in relation to the breath belt signal and, if you have it, the corresponding acoustic data. This plot can help you decide if you need to adjust the default paramaters (e.g., minimum inter-breath interval).
+Use `findBreaths()` to automatically detect speech breathing onsets and ends, then optionally corroborate the results to the acoustic speech envelope using `breathSpeechCompare()`. Finally, you can use `plotBreaths()` to visualise the breath onsets and ends in relation to the breath belt signal and, if you have it, the corresponding acoustic data. This plot can help you decide if you need to adjust the default paramaters (e.g., minimum inter-breath interval).
 
 **Usage**
 
