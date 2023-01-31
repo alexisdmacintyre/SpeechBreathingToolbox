@@ -9,7 +9,7 @@ Use `findBreaths()` to automatically detect speech breathing onsets and ends, th
 
 Run `example.m` with included example breath belta data and acoustic recording to see how the scripts work.
 
-<img width="750" alt="Acoustic landmarks for speech rhythm analysis" src="https://user-images.githubusercontent.com/55560694/215552770-4264208e-aaf1-4a16-9365-4db1460a0b8a.png">
+<img width="900" alt="Acoustic landmarks for speech rhythm analysis" src="https://user-images.githubusercontent.com/55560694/215552770-4264208e-aaf1-4a16-9365-4db1460a0b8a.png">
 
 **Future Versions**
 
