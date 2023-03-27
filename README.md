@@ -1,6 +1,12 @@
 # SpeechBreathingToolbox
 Tools for the automatic detection of speech-related inhalation events and characterisation of the speech respiratory cycle.
 
+Please cite as:
+
+MacIntyre, A. D. and Werner, R. (2023). An Automatic Method of Speech
+Breathing Annotation. <i>Proceedings of the 34th Conference on Electronic
+Speech Signal Processing (ESSV)</i>, Munich, DE.
+
 **About**
 
 Use `findBreaths()` to automatically detect speech breathing onsets and ends, then optionally corroborate the results to the acoustic speech envelope using `breathSpeechCompare()`. Finally, you can use `plotBreaths()` to visualise the breath onsets and ends in relation to the breath belt signal and, if you have it, the corresponding acoustic data. This plot can help you decide if you need to adjust the default paramaters (e.g., minimum inter-breath interval).
