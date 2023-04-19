@@ -3,9 +3,9 @@ Tools for the automatic detection of speech-related inhalation events and charac
 
 Please cite as:
 
-MacIntyre, A. D. and Werner, R. (2023). An Automatic Method of Speech
+[MacIntyre, A. D. and Werner, R. (2023). An Automatic Method of Speech
 Breathing Annotation. <i>Proceedings of the 34th Conference on Electronic
-Speech Signal Processing (ESSV)</i>, Munich, DE.
+Speech Signal Processing (ESSV)</i>, Munich, DE.](https://www.essv.de/paper.php?id=1179) 
 
 **About**
 
