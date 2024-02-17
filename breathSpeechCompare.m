@@ -115,10 +115,10 @@ thresh = thresh([24 30]);
 
 for ii = 1:numel(beg)
     fl = 0;
-    speechVector = spOut(beg(ii):en(ii));
-    breathVector = breathBelt(beg(ii):en(ii));
-    og_beg = beg(ii);
-    og_en = en(ii);
+    speechVector = spOut(round(beg(ii)):floor(en(ii)));
+    breathVector = breathBelt(round(beg(ii)):floor(en(ii)));
+    og_beg = round(beg(ii));
+    og_en = floor(en(ii));
     
     % Simplify speech vector
     spSil = movmean(speechVector,5);
